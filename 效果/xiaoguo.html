@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style/xiaoguo.css">
+</head>
+<body>
+	<div class="header">
+		<img src="images/1-1.jpg" alt="">
+		<h1>学习生涯</h1>
+
+	</div>
+	<div class="banner">
+		<div class="left-box">
+			<h2>jquery效果</h2>
+			<ul class="num-list">
+				<li><a href="效果图/tupianqiehuan.html">图片切换</a></li>
+				<li><a href="效果图/tupianlunbo.html">图片轮播</a></li>
+				<li><a href="效果图/xialacaidan.html">下拉菜单</a></li>
+				<li><a href="效果图/gundongcaidan.html">滚动菜单</a></li>
+				<li><a href="效果图/xuanxiangka.html">选项卡</a></li>
+				<li><a href="效果图/xianshidatu.html">鼠标移动显示大图</a></li>
+				<li><a href="效果图/jisuanqi.html">计算器</a></li>
+				<li><a href="效果图/donghuaxiaoguo.html">动画</a></li>
+			</ul>
+		</div>
+		<div class="right-box">
+			<ul>
+				<li><img src="images/2.jpg" alt=""></li>
+				<li><img src="images/4.jpg" alt=""></li>
+				<li><img src="images/5.jpg" alt=""></li>
+				<li><img src="images/6.jpg" alt=""></li>
+			</ul>
+		</div>
+		<ul class="list-one">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		
+	</div>
+	<script src="script/jquery.js"></script>
+	<script>
+		var n=0;
+		function fun(){
+			n++
+			var marLeft = -450 * n;
+			$(".right-box ul").animate({marginLeft:marLeft},500);
+			n = n==3 ? 0 : n ;
+		}
+		fun()
+		setInterval(fun,1000);
+		$(".list-one").click(function(){
+			var index = $(this).index();
+			var marLeft = index * -450 ;
+			$(".right-box ul").animate({marginLeft:marLeft},500)
+		})
+
+	</script>
+</body>
+</html>
